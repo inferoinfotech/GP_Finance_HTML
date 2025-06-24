@@ -3468,7 +3468,7 @@ h6 {
   position: relative;
 }
 .header__area-menubar-center-menu ul li.menu-item-has-children > a::before {
-  content: "\f107";
+  /* content: "\f107"; */
   position: absolute;
   top: 50%;
   transform: translateY(-48%);
@@ -6258,7 +6258,7 @@ h6 {
   top: -16px;
   width: 213px;
   height: 100%;
-  background-image: url("../images/services-4.png");
+  /* background-image: url("../images/services-4.png"); */
   background-repeat: no-repeat;
   transform: translateX(-50%);
   z-index: -1;
