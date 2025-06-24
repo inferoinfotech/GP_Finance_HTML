@@ -11984,7 +11984,7 @@ h6 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background: var(--primary-color-2);
+  /* background: var(--primary-color-2); */
   padding: 80px 0;
   direction: ltr;
 }
@@ -12002,7 +12002,7 @@ h6 {
 }
 .text__slider ul li span {
   margin: 0 40px;
-  color: var(--text-white);
+  color: var(--dark-one);
   opacity: 0.5;
 }
 .text__slider ul li h2 {
