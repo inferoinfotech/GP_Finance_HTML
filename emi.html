@@ -4,331 +4,702 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EMI Calculator (₹)</title>
-    <style>
-      :root {
-        --primary: #2563eb;
-        --primary-light: #3b82f6;
-        --primary-dark: #1d4ed8;
-        --secondary: #f8fafc;
-        --text: #1e293b;
-        --text-light: #64748b;
-        --border: #e2e8f0;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: #f1f5f9;
-        color: var(--text);
-        padding: 20px;
-      }
-
-      .calculator {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        overflow: hidden;
-      }
-
-      .header {
-        background-color: var(--primary);
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .header h1 {
-        font-size: 24px;
-        font-weight: 600;
-      }
-
-      .form-container {
-        padding: 24px;
-      }
-
-      .form-group {
-        margin-bottom: 30px;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 12px;
-        font-weight: 500;
-        color: var(--text);
-      }
-
-      .progress-container {
-        margin-top: 8px;
-      }
-
-      .progress-label {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 8px;
-      }
-
-      .progress-value {
-        font-weight: 600;
-        color: var(--primary);
-      }
-
-      input[type="range"] {
-        -webkit-appearance: none;
-        width: 100%;
-        height: 10px;
-        border-radius: 5px;
-        background: #e2e8f0;
-        outline: none;
-      }
-
-      input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: var(--primary);
-        cursor: pointer;
-        border: 4px solid white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      input[type="range"]::-moz-range-thumb {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: var(--primary);
-        cursor: pointer;
-        border: 4px solid white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .results {
-        background-color: var(--secondary);
-        padding: 24px;
-        border-radius: 8px;
-        margin-top: 20px;
-      }
-
-      .result-item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 12px;
-      }
-
-      .result-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .result-label {
-        font-weight: 500;
-        color: var(--text-light);
-      }
-
-      .result-value {
-        font-weight: 600;
-        color: var(--text);
-      }
-
-      .highlight {
-        color: var(--primary);
-        font-size: 18px;
-      }
-
-      .indian-format {
-        font-family: Arial, sans-serif;
-      }
-    </style>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="images/favicon-2.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/all.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Flaticon -->
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <!-- Swiper Bundle CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <!-- Mean Menu CSS -->
+    <link rel="stylesheet" href="css/meanmenu.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="calculator">
-      <div class="header">
-        <h1>EMI Calculator (₹)</h1>
+    <!-- Preloader Start -->
+    <div class="theme-loader">
+      <div class="spinner">
+        <div class="spinner-bounce one"></div>
+        <div class="spinner-bounce two"></div>
+        <div class="spinner-bounce three"></div>
       </div>
-
-      <div class="form-container">
-        <div class="form-group">
-          <label for="loanAmountRange"
-            >Loan Amount:
-            <span class="progress-value" id="loanAmountValue"
-              >₹37,62,500</span
-            ></label
-          >
-          <div class="progress-container">
-            <div class="progress-label">
-              <span>₹0</span>
-              <span>₹50,00,000</span>
+    </div>
+    <!-- Preloader End -->
+    <!-- Top Bar Area Start -->
+    <div class="top__bar-two">
+      <div class="custom__container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="top__bar-two-left lg-t-center">
+              <ul>
+                <li>
+                  <a href="https://www.google.com/maps" target="_blank"
+                    ><i class="fas fa-map-marker-alt"></i>Location : Thornridge
+                    Cir. Shiloh, Hawaii</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:info.me@gmail.com"
+                    ><i class="fas fa-envelope"></i>Email : info.me@gmail.com</a
+                  >
+                </li>
+              </ul>
             </div>
-            <input
-              type="range"
-              id="loanAmountRange"
-              min="0"
-              max="5000000"
-              value="3762500"
-              step="10000"
-            />
+          </div>
+          <div class="col-lg-4">
+            <div class="top__bar-two-right">
+              <h6>Follow Us :</h6>
+              <div class="top__bar-two-right-social">
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com" target="_blank"
+                      ><i class="fab fa-facebook-f"></i><span>Facebook</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com" target="_blank"
+                      ><i class="fab fa-instagram"></i><span>Instagram</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://twitter.com" target="_blank"
+                      ><i class="fab fa-twitter"></i><span>Twitter</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://dribbble.com" target="_blank"
+                      ><i class="fab fa-dribbble"></i><span>Dribbble</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="loanTermRange"
-            >Loan Term:
-            <span class="progress-value" id="loanTermValue"
-              >130 Months</span
-            ></label
-          >
-          <div class="progress-container">
-            <div class="progress-label">
-              <span>6 Months</span>
-              <span>360 Months</span>
+      </div>
+    </div>
+    <!-- Top Bar Area End -->
+    <!-- Header Area Start -->
+    <div class="header__area two header__sticky">
+      <div class="custom__container">
+        <div class="header__area-menubar p-relative">
+          <div class="header__area-menubar-left">
+            <div class="header__area-menubar-left-logo two">
+              <a href="index.html"
+                ><img
+                  class="dark-n"
+                  src="images/logo-3.png"
+                  alt="Logo-image" /><img
+                  class="light-n"
+                  src="images/logo-4.png"
+                  alt="Logo-image"
+              /></a>
             </div>
-            <input
-              type="range"
-              id="loanTermRange"
-              min="6"
-              max="360"
-              value="130"
-              step="1"
-            />
+          </div>
+          <div class="header__area-menubar-center">
+            <div class="header__area-menubar-center-menu two menu-responsive">
+              <ul id="mobilemenu">
+                <li class="menu-item-has-children menus">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="menu-item-has-children home">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="about.html">About Us</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="services.html">Services</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="emi.html">EMI Calculator</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__area-menubar-right">
+            <div class="header__area-menubar-right-search two">
+              <div class="header__area-menubar-right-search-box">
+                <form>
+                  <input type="search" placeholder="Search Here....." />
+                  <button type="submit"><i class="fal fa-search"></i></button>
+                </form>
+                <span class="header__area-menubar-right-search-box-icon"
+                  ><i class="fal fa-times"></i
+                ></span>
+              </div>
+            </div>
+            <div class="header__area-menubar-right-sidebar">
+              <div class="header__area-menubar-right-sidebar-popup-icon">
+                <i class="flaticon-dots-menu"></i>
+              </div>
+            </div>
+            <div class="header__area-menubar-right-btn">
+              <a class="btn-two" href="contact.html">Contact now</a>
+            </div>
+            <div class="header__area-menubar-right-responsive-menu menu__bar">
+              <i class="flaticon-dots-menu"></i>
+            </div>
+            <!-- sidebar Menu Start -->
+            <div class="header__area-menubar-right-sidebar-popup two">
+              <div class="sidebar-close-btn"><i class="fal fa-times"></i></div>
+              <div class="header__area-menubar-right-sidebar-popup-logo">
+                <a href="index.html">
+                  <img src="images/logo-4.png" alt="Logo-image" />
+                </a>
+              </div>
+              <p>
+                The insurance company assumes the financial risk of covering
+                these events in exchange for the premiums paid by the
+                policyholder. There are many different types of insurance,
+              </p>
+              <div class="header__area-menubar-right-sidebar-popup-contact">
+                <h4 class="mb-30">Get In Touch</h4>
+                <div
+                  class="header__area-menubar-right-sidebar-popup-contact-item"
+                >
+                  <div
+                    class="header__area-menubar-right-sidebar-popup-contact-item-icon"
+                  >
+                    <i class="fal fa-phone-alt icon-animation"></i>
+                  </div>
+                  <div
+                    class="header__area-menubar-right-sidebar-popup-contact-item-content"
+                  >
+                    <span>Call Now</span>
+                    <h6>
+                      <a href="tel:+125(895)658568">+125 (895) 658 568</a>
+                    </h6>
+                  </div>
+                </div>
+                <div
+                  class="header__area-menubar-right-sidebar-popup-contact-item"
+                >
+                  <div
+                    class="header__area-menubar-right-sidebar-popup-contact-item-icon"
+                  >
+                    <i class="fal fa-envelope"></i>
+                  </div>
+                  <div
+                    class="header__area-menubar-right-sidebar-popup-contact-item-content"
+                  >
+                    <span>Quick Email</span>
+                    <h6>
+                      <a href="mailto:info.help@gmail.com"
+                        >info.help@gmail.com</a
+                      >
+                    </h6>
+                  </div>
+                </div>
+                <div
+                  class="header__area-menubar-right-sidebar-popup-contact-item"
+                >
+                  <div
+                    class="header__area-menubar-right-sidebar-popup-contact-item-icon"
+                  >
+                    <i class="fal fa-map-marker-alt"></i>
+                  </div>
+                  <div
+                    class="header__area-menubar-right-sidebar-popup-contact-item-content"
+                  >
+                    <span>Office Address</span>
+                    <h6>
+                      <a href="https://www.google.com/maps" target="_blank"
+                        >PV3M+X68 Welshpool United Kingdom</a
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div class="header__area-menubar-right-sidebar-popup-social">
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com" target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com" target="_blank"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.behance.net" target="_blank"
+                      ><i class="fab fa-behance"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com" target="_blank"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="sidebar-overlay"></div>
+            <!-- sidebar Menu Start -->
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="interestRateRange"
-            >Interest Rate:
-            <span class="progress-value" id="interestRateValue"
-              >6.5%</span
-            ></label
-          >
-          <div class="progress-container">
-            <div class="progress-label">
-              <span>1%</span>
-              <span>20%</span>
+        <div class="menu__bar-popup two">
+          <div class="menu__bar-popup-close"><i class="fal fa-times"></i></div>
+          <div class="menu__bar-popup-left">
+            <div class="menu__bar-popup-left-logo">
+              <a href="index.html"
+                ><img src="images/logo-4.png" alt="logo-image"
+              /></a>
+              <div class="responsive-menu"></div>
             </div>
+            <div class="menu__bar-popup-left-social">
+              <h6>Follow Us</h6>
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com" target="_blank"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com" target="_blank"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com" target="_blank"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://dribbble.com" target="_blank"
+                    ><i class="fab fa-dribbble"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.behance.net" target="_blank"
+                    ><i class="fab fa-behance"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com" target="_blank"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com" target="_blank"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="menu__bar-popup-right">
+            <div class="menu__bar-popup-right-search">
+              <form>
+                <input
+                  type="search"
+                  placeholder="Search Here....."
+                  required=""
+                />
+                <button type="submit"><i class="fal fa-search"></i></button>
+              </form>
+            </div>
+            <div class="menu__bar-popup-right-contact">
+              <h4>Get In Touch</h4>
+              <div class="menu__bar-popup-right-contact-item">
+                <div class="menu__bar-popup-right-contact-item-info">
+                  <span>Call Now</span>
+                  <h6><a href="tel:+125(895)658568">+125 (895) 658 568</a></h6>
+                </div>
+              </div>
+              <div class="menu__bar-popup-right-contact-item">
+                <div class="menu__bar-popup-right-contact-item-info">
+                  <span>Quick Email</span>
+                  <h6>
+                    <a href="mailto:info.help@gmail.com">info.help@gmail.com</a>
+                  </h6>
+                </div>
+              </div>
+              <div class="menu__bar-popup-right-contact-item">
+                <div class="menu__bar-popup-right-contact-item-info">
+                  <span>Office Address</span>
+                  <h6>
+                    <a href="https://www.google.com/maps" target="_blank"
+                      >PV3M+X68 Welshpool United Kingdom</a
+                    >
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Calculator start -->
+    <div class="bg-gray-50 min-h-screen flex items-center justify-center p-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl w-full">
+        <!-- Left Card - Loan Form -->
+        <div class="bg-white rounded-xl shadow p-6">
+          <h2
+            class="text-xl font-bold text-purple-700 flex items-center gap-2 mb-6"
+          >
+            <span>📄</span> Loan Details
+          </h2>
+
+          <div class="mb-4">
+            <label class="block text-sm font-semibold mb-1"
+              >Loan Amount ($)</label
+            >
             <input
-              type="range"
-              id="interestRateRange"
-              min="1"
-              max="20"
-              value="6.5"
+              type="number"
+              id="loanInput"
+              value="500000"
+              class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-sm font-semibold mb-1"
+              >Interest Rate (% per annum)</label
+            >
+            <input
+              type="number"
+              id="rateInput"
+              value="8.5"
               step="0.1"
+              class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
             />
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-semibold mb-1">Loan Tenure</label>
+            <div class="flex gap-2">
+              <input
+                type="number"
+                id="tenureInput"
+                value="20"
+                class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+              <select
+                id="tenureType"
+                class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              >
+                <option value="years" selected>Years</option>
+                <option value="months">Months</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <div class="results">
-          <div class="result-item">
-            <span class="result-label">Monthly Payment (EMI):</span>
-            <span class="result-value highlight" id="monthlyPayment"
-              >₹40,394</span
-            >
+        <!-- Right Panel -->
+        <div class="flex flex-col gap-6">
+          <!-- EMI Card -->
+          <div
+            class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl p-6 shadow"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">📈</span>
+              <div class="text-right">
+                <p class="text-sm">Monthly EMI</p>
+                <p class="text-3xl font-bold" id="emiAmount">$4,339</p>
+              </div>
+            </div>
           </div>
-          <div class="result-item">
-            <span class="result-label">Total Interest Payable:</span>
-            <span class="result-value" id="totalInterest">₹14,88,685</span>
+
+          <!-- Payment Breakdown -->
+          <div class="bg-white rounded-xl shadow p-6">
+            <h3 class="font-semibold mb-4 text-lg">Payment Breakdown</h3>
+            <div class="flex justify-between border-b py-2">
+              <span>Principal Amount</span>
+              <span id="principalText" class="font-semibold">$500,000</span>
+            </div>
+            <div class="flex justify-between border-b py-2">
+              <span>Total Interest</span>
+              <span id="interestText" class="font-semibold text-red-600"
+                >$541,388</span
+              >
+            </div>
+            <div class="flex justify-between py-2">
+              <span>Total Amount</span>
+              <span id="totalText" class="font-semibold text-green-600"
+                >$1,041,388</span
+              >
+            </div>
           </div>
-          <div class="result-item">
-            <span class="result-label"
-              >Total Payment (Principal + Interest):</span
-            >
-            <span class="result-value" id="totalPayment">₹52,51,185</span>
+
+          <!-- Distribution Bars -->
+          <div class="bg-white rounded-xl shadow p-6">
+            <h3 class="font-semibold mb-4 text-lg">Payment Distribution</h3>
+            <div class="mb-3">
+              <div class="flex justify-between mb-1">
+                <span>Principal</span>
+                <span id="principalPercent">48%</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-gray-200 overflow-hidden">
+                <div
+                  id="principalBar"
+                  class="h-full bg-blue-600"
+                  style="width: 48%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Interest</span>
+                <span id="interestPercent">52%</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-gray-200 overflow-hidden">
+                <div
+                  id="interestBar"
+                  class="h-full bg-red-600"
+                  style="width: 52%"
+                ></div>
+              </div>
+            </div>
           </div>
-          <div class="result-item">
-            <span class="result-label">Payment Duration:</span>
-            <span class="result-value" id="paymentDuration"
-              >10 Years 10 Months</span
-            >
+        </div>
+      </div>
+    </div>
+    <!-- Calculator end -->
+
+    <!-- Footer Area Start -->
+    <div class="footer__one" data-background="assets/img/shape/footer-bg-2.png">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-5 col-sm-7">
+            <div class="footer__one-widget">
+              <div class="footer__one-widget-about">
+                <a href="index.html"
+                  ><img src="images/GP logo.png" alt="Logo-image"
+                /></a>
+                <p>We' Providing the Best Loans for Your Financial Needs</p>
+                <div class="footer__one-widget-about-social">
+                  <h6>Follow Us :</h6>
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com" target="_blank"
+                        ><i class="fab fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com" target="_blank"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://www.behance.net" target="_blank"
+                        ><i class="fab fa-behance"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://dribbble.com" target="_blank"
+                        ><i class="fab fa-dribbble"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-sm-5">
+            <div class="footer__one-widget">
+              <div class="footer__one-widget-menu footer__area-widget-menu two">
+                <h4>Main Pages</h4>
+                <ul>
+                  <li><a href="services-right-sidebar.html">Home</a></li>
+                  <li><a href="services-right-sidebar.html">About Us</a></li>
+                  <li><a href="services-right-sidebar.html">Services</a></li>
+                  <li>
+                    <a href="services-right-sidebar.html">EMI Calculator</a>
+                  </li>
+                  <li><a href="services-right-sidebar.html">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="footer__one-widget">
+              <div class="footer__one-widget-location">
+                <h4>Official info</h4>
+                <div class="footer__one-widget-location-item">
+                  <div class="footer__one-widget-location-item-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="footer__one-widget-location-item-info">
+                    <a href="https://www.google.com/maps" target="_blank"
+                      >1802, The Junomoneta Tower, Nr Rajhans Cinema, Pal RTO
+                      road Road, Surat 395009</a
+                    >
+                  </div>
+                </div>
+                <h6>Working Hours :</h6>
+                <div class="footer__one-widget-location-item">
+                  <div class="footer__one-widget-location-item-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="footer__one-widget-location-item-info">
+                    <span>Monday - Friday 09:00 AM- 06:00 PM Sun Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="footer__one-widget">
+              <div class="footer__one-widget-gallery">
+                <h4>Explore Services</h4>
+                <ul>
+                  <li>
+                    <a href="services-right-sidebar.html"
+                      >Unsecured Business Loan</a
+                    >
+                  </li>
+                  <li>
+                    <a href="services-right-sidebar.html">Overdraft facility</a>
+                  </li>
+                  <li><a href="services-right-sidebar.html">Term Loan</a></li>
+                  <li>
+                    <a href="services-right-sidebar.html">EMI Calculator</a>
+                  </li>
+                  <li>
+                    <a href="services-right-sidebar.html">Debt Consolidation</a>
+                  </li>
+                  <li>
+                    <a href="services-right-sidebar.html">EMI Calculator</a>
+                  </li>
+                  <li>
+                    <a href="services-right-sidebar.html">Debt Consolidation</a>
+                  </li>
+                  <li><a href="services-right-sidebar.html">Home Loan</a></li>
+                  <li>
+                    <a href="services-right-sidebar.html">New Car Loan</a>
+                  </li>
+                  <li>
+                    <a href="services-right-sidebar.html"
+                      >Salaried Personal Loan</a
+                    >
+                  </li>
+                  <li><a href="services-right-sidebar.html">Doctor Loan</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright__two">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <p>
+                Copyright 2023 <a href="index.html">GP anancial Services</a> -
+                All Rights Reserved By
+                <a href="https://themeforest.net/user/themeori" target="_blank"
+                  >ThemeOri</a
+                >
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Scroll Btn Start -->
+    <div class="scroll-up scroll-two">
+      <svg
+        class="scroll-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+    </div>
+    <!-- Scroll Btn End -->
+    <!-- Main JS -->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Counter Up JS -->
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Popper JS -->
+    <script src="js/popper.min.js"></script>
+    <!-- Progressbar JS -->
+    <script src="js/progressbar.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Swiper Bundle JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <!-- Waypoints JS -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Mean Menu JS -->
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get all range input elements
-        const loanAmountRange = document.getElementById("loanAmountRange");
-        const loanTermRange = document.getElementById("loanTermRange");
-        const interestRateRange = document.getElementById("interestRateRange");
+      const loanInput = document.getElementById("loanInput");
+      const rateInput = document.getElementById("rateInput");
+      const tenureInput = document.getElementById("tenureInput");
+      const tenureType = document.getElementById("tenureType");
 
-        // Get all display elements
-        const loanAmountValue = document.getElementById("loanAmountValue");
-        const loanTermValue = document.getElementById("loanTermValue");
-        const interestRateValue = document.getElementById("interestRateValue");
-        const monthlyPayment = document.getElementById("monthlyPayment");
-        const totalInterest = document.getElementById("totalInterest");
-        const totalPayment = document.getElementById("totalPayment");
-        const paymentDuration = document.getElementById("paymentDuration");
+      const emiAmount = document.getElementById("emiAmount");
+      const principalText = document.getElementById("principalText");
+      const interestText = document.getElementById("interestText");
+      const totalText = document.getElementById("totalText");
 
-        // Format Indian currency
-        function formatIndianCurrency(amount) {
-          amount = amount.toFixed(0);
-          let lastThree = amount.substring(amount.length - 3);
-          let otherNumbers = amount.substring(0, amount.length - 3);
-          if (otherNumbers != "") lastThree = "," + lastThree;
-          return (
-            "₹" + otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree
-          );
-        }
+      const principalPercent = document.getElementById("principalPercent");
+      const interestPercent = document.getElementById("interestPercent");
 
-        // Calculate EMI
-        function calculateEMI() {
-          const loanAmount = parseFloat(loanAmountRange.value);
-          const loanTerm = parseInt(loanTermRange.value);
-          const annualInterestRate = parseFloat(interestRateRange.value);
+      const principalBar = document.getElementById("principalBar");
+      const interestBar = document.getElementById("interestBar");
 
-          // Update displayed values
-          loanAmountValue.textContent = formatIndianCurrency(loanAmount);
-          loanTermValue.textContent = loanTerm + " Months";
-          interestRateValue.textContent = annualInterestRate.toFixed(1) + "%";
+      function calculateEMI() {
+        const principal = parseFloat(loanInput.value);
+        const annualRate = parseFloat(rateInput.value);
+        const tenure = parseInt(tenureInput.value);
+        const months = tenureType.value === "years" ? tenure * 12 : tenure;
 
-          // Calculate monthly interest rate
-          const monthlyInterestRate = annualInterestRate / 100 / 12;
+        const monthlyRate = annualRate / 12 / 100;
+        const emi =
+          (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+          (Math.pow(1 + monthlyRate, months) - 1);
 
-          // Calculate EMI using the formula: EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)
-          const emi =
-            (loanAmount *
-              monthlyInterestRate *
-              Math.pow(1 + monthlyInterestRate, loanTerm)) /
-            (Math.pow(1 + monthlyInterestRate, loanTerm) - 1);
+        const totalPayment = emi * months;
+        const totalInterest = totalPayment - principal;
 
-          // Calculate total payment and total interest
-          const totalPaymentAmount = emi * loanTerm;
-          const totalInterestAmount = totalPaymentAmount - loanAmount;
+        const principalPct = (principal / totalPayment) * 100;
+        const interestPct = 100 - principalPct;
 
-          // Calculate years and months
-          const years = Math.floor(loanTerm / 12);
-          const months = loanTerm % 12;
+        emiAmount.innerText = `$${Math.round(emi).toLocaleString()}`;
+        principalText.innerText = `$${principal.toLocaleString()}`;
+        interestText.innerText = `$${Math.round(
+          totalInterest
+        ).toLocaleString()}`;
+        totalText.innerText = `$${Math.round(totalPayment).toLocaleString()}`;
 
-          // Update results
-          monthlyPayment.textContent = formatIndianCurrency(emi);
-          totalInterest.textContent = formatIndianCurrency(totalInterestAmount);
-          totalPayment.textContent = formatIndianCurrency(totalPaymentAmount);
-          paymentDuration.textContent =
-            years +
-            " Year" +
-            (years !== 1 ? "s" : "") +
-            " " +
-            months +
-            " Month" +
-            (months !== 1 ? "s" : "");
-        }
+        principalPercent.innerText = `${principalPct.toFixed(1)}%`;
+        interestPercent.innerText = `${interestPct.toFixed(1)}%`;
 
-        // Add event listeners for live updates
-        loanAmountRange.addEventListener("input", calculateEMI);
-        loanTermRange.addEventListener("input", calculateEMI);
-        interestRateRange.addEventListener("input", calculateEMI);
+        principalBar.style.width = `${principalPct}%`;
+        interestBar.style.width = `${interestPct}%`;
+      }
 
-        // Initial calculation
-        calculateEMI();
-      });
+      loanInput.addEventListener("input", calculateEMI);
+      rateInput.addEventListener("input", calculateEMI);
+      tenureInput.addEventListener("input", calculateEMI);
+      tenureType.addEventListener("change", calculateEMI);
+
+      calculateEMI(); // initialize on load
     </script>
   </body>
 </html>
